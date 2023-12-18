@@ -1,24 +1,12 @@
-# README
+## このリポジトリは何？
+2023年コラボレイティブ開発特論のgroup5用のリポジトリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使用技術
+- バックエンド
+  - Ruby on Rails :  
+  - mysql : 5.7
+  - ruby : 3.0.3
+- フロントエンド
+  - React : 予定
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 環境構築
