@@ -20,6 +20,11 @@
 docker-compose run web rails db:create
 ```
 
+## document
+- [プロジェクトルール](https://docs.google.com/spreadsheets/d/1Qavelva38QyGFl-3XhiZfrxMIoPjNZEDw0jYjMzqyIo/edit#gid=460705601)
+- [要件定義]([https://docs.google.com/spreadsheets/d/1Qavelva38QyGFl-3XhiZfrxMIoPjNZEDw0jYjMzqyIo/edit#gid=460705601](https://docs.google.com/spreadsheets/d/1Qavelva38QyGFl-3XhiZfrxMIoPjNZEDw0jYjMzqyIo/edit#gid=0))
+- [発表用資料](https://docs.google.com/presentation/d/1uQXVScWNPHEZQwa6m0KHZ_uFJn5nL9CfjdL2pA_M_Lo/edit#slide=id.p)
+
 
 ## 環境構築
 ### 前提
