@@ -70,7 +70,7 @@ docker-compose run web rails db:create
 ![スクリーンショット 2023-12-18 20 42 22](https://github.com/collaborative-2023-g3/pj-group3/assets/71912259/fa81555f-0192-47fb-8cbe-73300ec911c9)
 
 
-### ローカルでの環境構築② : Rails環境の構築
+### ローカルでの環境構築② : dbの確認
 ### 前提
 macユーザー : Sequel Aceを導入済であること
 
