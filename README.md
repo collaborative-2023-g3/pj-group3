@@ -3,7 +3,7 @@
 
 ## 使用技術
 - バックエンド
-  - Ruby on Rails :  
+  - Ruby on Rails :  7.0.8
   - mysql : 5.7
   - ruby : 3.0.3
 - フロントエンド
