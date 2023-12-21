@@ -19,6 +19,7 @@ jobs:
         ports:
           - "3306:3306"
         env:
+          RAILS_ENV: test
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
     steps:
       - name: Checkout code
