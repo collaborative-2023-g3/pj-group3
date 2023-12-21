@@ -13,15 +13,16 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    db: # サービス名を 'db' に変更
-      image: mysql:5.7
-      ports:
-        - "3306:3306"
-      env:
-        MYSQL_ROOT_PASSWORD: password
-        MYSQL_DATABASE: myapp_test # データベース名を 'myapp_test' に変更
-        MYSQL_USER: root # ユーザー名を 'root' に変更
-        MYSQL_PASSWORD: password
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - "3306:3306"
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: myapp_test # データベース名を 'myapp_test' に変更
+          MYSQL_USER: root # ユーザー名を 'root' に変更
+          MYSQL_PASSWORD: password
     env:
       RAILS_ENV: test
       DATABASE_URL: "mysql2://rails:password@localhost:3306/rails_test"
