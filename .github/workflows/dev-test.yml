@@ -35,7 +35,7 @@ jobs:
           bundle exec rake db:migrate
       # Add or replace test runners here
       - name: Run tests
-        run: bin/rake
+        run: rails test
   Job-Rubocop:
     runs-on: ubuntu-latest
     timeout-minutes: 10
