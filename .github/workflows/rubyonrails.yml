@@ -14,7 +14,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     services:
-      mysql:
+      db:
         image: mysql:5.7
         ports:
           - "3306:3306"
@@ -31,7 +31,6 @@ jobs:
       # Add or replace database setup steps here
       - name: Set up database schema
         run: |
-          ls -la config/
           cp config/database.ci.yml config/database.yml
           bundle exec rake db:create
           bundle exec rake db:migrate
