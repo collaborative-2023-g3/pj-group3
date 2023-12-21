@@ -19,7 +19,6 @@ jobs:
         ports:
           - "3306:3306"
         env:
-          RAILS_ENV: test
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
     steps:
       - name: Checkout code
@@ -31,6 +30,8 @@ jobs:
           bundler-cache: true
       # Add or replace database setup steps here
       - name: Set up database schema
+        env:
+          RAILS_ENV: test
         run: |
           cp config/database.ci.yml config/database.yml
           bundle exec rake db:create
