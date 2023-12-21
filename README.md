@@ -8,17 +8,34 @@
   - ruby : 3.0.3
 - フロントエンド
   - React : 予定
- 
+
 ※ローカル環境での環境構築を容易にするため、本リポジトリではDockerを使う。Dockerを使いたくない人は各自ローカルにてよしなに対応してください。
 
-## ローカル環境構築での注意点
-
+## 開発中に困った時に見るとこ
+### dockerコンテナ上で実行するコマンド
 - rails ~~ コマンドを実施するときは、docker-compose run web ~~~ という形で実施してください
 
 (例)
 ```
 docker-compose run web rails db:create
 ```
+
+### gemが反映されない
+イメージを作り直してください
+
+```
+docker-compose down -v
+docker-compose build --no-cache
+docker-compose up
+```
+
+
+### コマンドチートシート
+- rubocop周り
+こちら参照
+https://qiita.com/piggydev/items/074e020e07af7ebc872d
+
+
 
 ## document
 - [プロジェクトルール](https://docs.google.com/spreadsheets/d/1Qavelva38QyGFl-3XhiZfrxMIoPjNZEDw0jYjMzqyIo/edit#gid=460705601)
@@ -87,9 +104,3 @@ windowsユーザー ; よしなにお選びください
 以下のようなイメージで情報を記載。passwordのところには、「password」と入力
 
 ![スクリーンショット 2023-12-18 20 44 58](https://github.com/collaborative-2023-g3/pj-group3/assets/71912259/5aabe8ab-be55-4109-8c52-3a1495dfd2fa)
-
-
-
-
-
-
