@@ -32,7 +32,7 @@ jobs:
       - name: Set up database schema
         run: |
           ls -la config/
-          cp config/database.yml.ci config/database.yml
+          cp config/database.ci.yml config/database.yml
           bundle exec rake db:create
           bundle exec rake db:migrate
       # Add or replace test runners here
