@@ -1,4 +1,6 @@
-# このファイルは、GitHub Actions でテストを実行するための設定ファイルです。
+# このファイルは、GitHub Actions でテスト/rubocopを実行するための設定ファイルです。
+# 時間があればreviewdogを導入したい
+# - https://qiita.com/ken1flan/items/a28e08eee5e5cf061232
 name: "test"
 on:
   push:
@@ -34,3 +36,19 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+  Job-Rubocop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Setup Ruby Env
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0.3'
+          bundler-cache: true
+
+      - name: Show ruby version
+        run: ruby -v
+
+      - name: Run lint
+        run: bundle exec rubocop
