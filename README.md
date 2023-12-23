@@ -11,6 +11,21 @@
 
 ※ローカル環境での環境構築を容易にするため、本リポジトリではDockerを使う。Dockerを使いたくない人は各自ローカルにてよしなに対応してください。
 
+## 開発のルール
+- ユニットテストのソースを書きましょう
+コントローラー : app/controllers/test
+モデル : app/models/test/sample_model_test.rb
+にテストファイルを追加する
+
+- ユニットテストを実行しましょう
+
+```
+docker-compose run web rails test
+```
+
+で実行。
+
+
 ## 開発中に困った時に見るとこ
 ### dockerコンテナ上で実行するコマンド
 - rails ~~ コマンドを実施するときは、docker-compose run web ~~~ という形で実施してください
@@ -34,6 +49,7 @@ docker-compose up
 - rubocop周り
 こちら参照
 https://qiita.com/piggydev/items/074e020e07af7ebc872d
+
 
 
 
