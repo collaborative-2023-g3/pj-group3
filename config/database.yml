@@ -20,7 +20,9 @@ default: &default
 development:
   <<: *default
   database: myapp_development
-  host: 127.0.0.1
+  host: db # Dockerをつかっている場合
+  # host: 127.0.0.1 # 自分のマシンでrails sを実行する場合は
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
