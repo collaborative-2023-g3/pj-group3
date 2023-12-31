@@ -15,12 +15,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
-  host: db
+  host: db # Dockerをつかっている場合
 
 development:
   <<: *default
   database: myapp_development
-  host: db # Dockerをつかっている場合
   # host: 127.0.0.1 # 自分のマシンでrails sを実行する場合は
 
 
