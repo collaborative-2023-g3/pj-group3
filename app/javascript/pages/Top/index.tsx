@@ -1,7 +1,8 @@
 import React from 'react';
+import Header from '../../templates/Header';
 
 function Top() {
-  return <div>Hello from React</div>;
+  return <Header />;
 }
 
 export default Top;

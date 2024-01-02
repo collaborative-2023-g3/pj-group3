@@ -1,0 +1,11 @@
+// Entry point for your Sass build
+@use './reset.scss';
+
+// utility
+@use './colors.scss';
+@use './responsive.scss';
+
+// Reactファイル内
+@use '../../javascript/pages/styles.scss' as Pages;
+@use '../../javascript/parts/styles.scss' as Parts;
+@use '../../javascript/templates/styles.scss' as Templates;

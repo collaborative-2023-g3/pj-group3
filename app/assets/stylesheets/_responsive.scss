@@ -1,0 +1,54 @@
+@use "sass:math"; // 除数(/)が使用できないため、@useでインポート
+
+.visible-sp,
+img.visible-sp {
+	display: none !important;
+}
+
+@media screen and (max-width:768px) {
+	.hidden-sp {
+		display:none !important;
+	}
+	.visible-sp {
+		display:block !important;
+	}
+	br.visible-sp {
+		display:inline !important;
+	}
+	img.visible-sp {
+		display:inline-block !important;
+	}
+}
+
+// RESPONSIVE
+@mixin screen_pc {
+	@media print,screen and (min-width: 769px) {
+		@content;
+	}
+}
+
+@mixin screen_sp {
+	@media print,screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin screen_sp-mainview {
+	@media print,screen and (max-width: 375px) {
+		@content;
+	}
+}
+
+@mixin screen_iphone5 {
+	@media print,screen and (max-width: 320px) {
+		@content;
+	}
+}
+
+// サイズ可変
+@mixin responsiveVw($px, $vw){
+    width: math.div($px , $vw) * 100 + vw;
+}
+@mixin responsiveVh($px, $vw){
+    height: math.div($px , $vw) * 100 + vw;
+}
