@@ -1,0 +1,11 @@
+@use '../../../assets/stylesheets/colors' as *;
+
+.button {
+  background-color: $orange;
+  color: $white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px 0px #adadad;
+  text-emphasis: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}

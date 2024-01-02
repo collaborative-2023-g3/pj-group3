@@ -1,0 +1,25 @@
+@use '../../../assets/stylesheets/colors' as *;
+
+.t-header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid $lightBrown;
+
+  &__title {
+    font-size: 2rem;
+    margin: 0;
+  }
+  &__link{
+    display: flex;
+    li{
+      &:first-child {
+        margin-right: 20px;
+      }
+      a{
+        color: $orange;
+      }
+    }
+  }
+}

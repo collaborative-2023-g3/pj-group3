@@ -1,0 +1,5 @@
+// style定義禁止
+// フォルダ生やしたら適宜パスの追加
+
+@use '../templates/Header/style.scss' as Header;
+@use '../templates/LoginForm/style.scss' as LoginForm;

@@ -1,7 +1,7 @@
 # sample用
 class SamplesController < ApplicationController
   def index
-    @samples = SampleModel.all
+    # @samples = SampleModel.all
   end
 
   def show

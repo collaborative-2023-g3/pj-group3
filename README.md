@@ -7,7 +7,10 @@
   - mysql : 5.7
   - ruby : 3.0.3
 - フロントエンド
-  - React : 予定
+  - React : 18.2
+  - TypeScript
+
+※詳細の説明は、app/javascript/README.mdにあり。
 
 ※ローカル環境での環境構築を容易にするため、本リポジトリではDockerを使う。Dockerを使いたくない人は各自ローカルにてよしなに対応してください。
 
