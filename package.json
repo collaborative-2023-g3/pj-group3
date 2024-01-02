@@ -1,0 +1,16 @@
+{
+  "name": "pj-group3",
+  "private": "true",
+  "dependencies": {
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "esbuild": "^0.19.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/application.js --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --loader:.tsx=tsx",
+    "dev": "esbuild app/javascript/application.js --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --loader:.tsx=tsx --watch"
+  }
+}

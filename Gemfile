@@ -8,6 +8,7 @@ gem "bootsnap", require: false
 gem 'devise'
 gem "importmap-rails"
 gem "jbuilder"
+gem 'jsbundling-rails' # for React
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.8"
