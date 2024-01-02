@@ -1,3 +1,5 @@
-.aaa {
-  color: red;
+@use '../../../assets/stylesheets/colors' as *;
+
+.p-top{
+  margin: 50px 70px;
 }

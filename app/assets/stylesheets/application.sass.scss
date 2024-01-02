@@ -5,6 +5,9 @@
 @use './colors.scss';
 @use './responsive.scss';
 
+// common
+@use './common.scss';
+
 // Reactファイル内
 @use '../../javascript/pages/styles.scss' as Pages;
 @use '../../javascript/parts/styles.scss' as Parts;
