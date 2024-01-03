@@ -3,7 +3,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import Top from "./pages/Top";
-import AuthRegister from "./pages/AuthRegister";
+import { AuthRegister } from "./pages/AuthRegister";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Header } from "./templates/Header";
 
