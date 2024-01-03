@@ -1,4 +1,4 @@
+# ログインページ用
 class TopController < ApplicationController
-  def index
-  end
+  def index; end
 end
