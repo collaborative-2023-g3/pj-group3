@@ -40,9 +40,6 @@ class SamplesController < ApplicationController
     redirect_to samples_path
   end
 
-  def auth_register
-  end
-
   private
 
   def sample_params
