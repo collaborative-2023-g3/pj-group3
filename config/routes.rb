@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :samples
   root 'samples#index'
-  get '/auth_register', to: 'samples#auth_register'
 end
