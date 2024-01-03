@@ -1,7 +1,7 @@
 import React from "react";
 
-function AuthLogin() {
+function AuthRegister() {
   return <div className="aaa">Hello from React</div>;
 }
 
-export default AuthLogin;
+export default AuthRegister;
