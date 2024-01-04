@@ -1,3 +1,3 @@
-# ログインページ用
+# トップページ用
 module TopHelper
 end
