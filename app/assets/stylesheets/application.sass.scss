@@ -3,11 +3,9 @@
 @use './reset.scss';
 
 // utility
-@use './colors.scss';
-@use './responsive.scss';
-
-// common
-@use './common.scss';
+@use './utility/colors';
+@use './utility/responsive';
+@use './utility/common';
 
 // React各コンポーネント用scss
 @use './pages/pages.scss';
