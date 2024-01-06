@@ -1,14 +1,13 @@
 // Entry point for your Sass build
+// reset
 @use './reset.scss';
 
 // utility
-@use './colors.scss';
-@use './responsive.scss';
+@use './utility/colors';
+@use './utility/responsive';
+@use './utility/common';
 
-// common
-@use './common.scss';
-
-// Reactファイル内
-@use '../../javascript/pages/styles.scss' as Pages;
-@use '../../javascript/parts/styles.scss' as Parts;
-@use '../../javascript/templates/styles.scss' as Templates;
+// React各コンポーネント用scss
+@use './pages/pages.scss';
+@use './parts/parts.scss';
+@use './templates/templates.scss';

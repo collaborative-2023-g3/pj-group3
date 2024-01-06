@@ -1,3 +1,15 @@
 inherit_from: .rubocop_todo.yml
 Style/NumericLiterals:
   Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'db/migrate/*'
+    - 'db/*'
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+    - 'db/*'
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+    - 'db/*'

@@ -1,0 +1,59 @@
+@use '../../utility/colors' as *;
+
+.p-signup {
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+
+  &__title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    margin: 1.2rem 0 2.5rem 0;
+  }
+
+  &__form {
+    background: #f5f5f5; // 背景色は適宜調整
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5.5rem;
+
+    p {
+      margin-bottom: 3px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 0.5rem 2rem;
+      margin-bottom: 1.5rem;
+      background-color: white;
+      border: 1px solid gray;
+      border-radius: 4px;
+    }
+
+
+    button {
+      width: 50%;
+      margin: 0 auto;
+      padding: 1rem;
+      background-color: #ffa500; // 背景色は適宜調整
+      color: white;
+      font-weight: bold;
+      margin-top: 2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken(#ffa500, 10%);
+      }
+    }
+  }
+}
