@@ -1,13 +1,13 @@
 # devise-token-authにて作成するuserモデルのマイグレーションファイル
 class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[7.0]
   def change
-    create_table(:users) comment: '利用者テーブル' do |t|
+    create_table(:users, comment: '利用者テーブル') do |t|
       ## Required
       # t.string :provider, null: false, default: "email"
       # t.string :uid, null: false, default: ""
 
       ## Database authenticatable
-      t.string :encrypted_password, null: false, default: "" , comment: 'パスワード'
+      t.string :encrypted_password, null: false, default: "", comment: 'パスワード'
 
       ## Recoverable
       # t.string   :reset_password_token
@@ -29,12 +29,12 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[7.0]
       # t.datetime :locked_at
 
       ## User Info
-      #t.string :name
-      t.string :user_name , comment: '氏名'
+      # t.string :name
+      t.string :user_name, null: false, comment: '氏名'
       # t.string :nickname
       # t.string :image
-      t.string :email     , comment: 'メールアドレス'
-      t.integer :user_type, comment: 'ユーザータイプ(募集者 or 応募者)'
+      t.string :email, null: false, comment: 'メールアドレス'
+      t.integer :user_type, null: false, comment: 'ユーザータイプ(1:募集者 or 2:応募者)'
 
       ## Tokens
       # t.text :tokens
@@ -42,7 +42,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :users, :email,                unique: true
+    add_index :users, :email, unique: true
     # add_index :users, [:uid, :provider],     unique: true
     # add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true

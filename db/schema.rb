@@ -18,28 +18,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_03_025354) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
-    t.string "provider", default: "email", null: false
-    t.string "uid", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.boolean "allow_password_change", default: false
-    t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.string "name"
-    t.string "nickname"
-    t.string "image"
-    t.string "email"
-    t.text "tokens"
+  create_table "users", charset: "utf8mb4", comment: "利用者テーブル", force: :cascade do |t|
+    t.string "encrypted_password", default: "", null: false, comment: "パスワード"
+    t.string "user_name", null: false, comment: "氏名"
+    t.string "email", null: false, comment: "メールアドレス"
+    t.integer "user_type", null: false, comment: "ユーザータイプ(1:募集者 or 2:応募者)"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index %w[uid provider], name: "index_users_on_uid_and_provider", unique: true
   end
+
 end

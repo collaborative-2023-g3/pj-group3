@@ -7,6 +7,7 @@ ruby "3.2.2"
 gem "bootsnap", require: false
 gem 'devise'
 gem "devise_token_auth"
+gem 'devise-i18n'
 gem "importmap-rails"
 gem "jbuilder"
 gem 'jsbundling-rails' # for React
