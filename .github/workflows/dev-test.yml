@@ -25,8 +25,8 @@ jobs:
         with:
           bundler-cache: true
       - name: Set up database schema
-        # env:
-        #   RAILS_ENV: test
+        env:
+          RAILS_ENV: test
         run: |
           cp config/database.ci.yml config/database.yml
           bundle exec rake db:create
