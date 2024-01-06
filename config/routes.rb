@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :samples
-  root 'samples#index'
-  get '*path', to: 'samples#index', format: false # これがないとRailsがフロントエンド側のルーティングを認識できないため、任意のパスは全てリダイレクトする
+  root "top#index"
+  get '*path', to: 'top#index', format: false # これがないとRailsがフロントエンド側のルーティングを認識できないため、任意のパスは全てリダイレクトする
 end
