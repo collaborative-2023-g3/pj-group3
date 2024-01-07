@@ -3,8 +3,8 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[7.0]
   def change
     create_table(:users, comment: '利用者テーブル') do |t|
       ## Required
-      # t.string :provider, null: false, default: "email"
-      # t.string :uid, null: false, default: ""
+      t.string :provider, null: false, default: "email"
+      t.string :uid, null: false, default: ""
 
       ## Database authenticatable
       t.string :encrypted_password, null: false, default: "", comment: 'パスワード'
@@ -37,7 +37,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[7.0]
       t.integer :user_type, null: false, comment: 'ユーザータイプ(1:募集者 or 2:応募者)'
 
       ## Tokens
-      # t.text :tokens
+      t.text :tokens
 
       t.timestamps
     end
