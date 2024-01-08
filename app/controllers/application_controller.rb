@@ -1,4 +1,4 @@
-# Cat Family用
+# アプリケーション共通の機能を集めたもの(ログイン/ログアウトなど)
 class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
   # protect_from_forgery with: :null_session
