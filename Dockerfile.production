@@ -8,8 +8,8 @@ ARG DEV_PACKAGES="build-base curl-dev"
 # コンテナの作業用ディレクトリを設定する
 WORKDIR /myapp
 
-# 開発環境に関わる環境変数をdevelopmentに変更する(コンテナに渡すのでENVとする)
-ENV RAILS_ENV="development"
+# Railsの実行環境に関わる環境変数をproductionに変更する(コンテナに渡すのでENVとする)
+ENV RAILS_ENV="production"
 
 # ローカルにあるGemfileとGemfile.lockをコンテナに複製する
 COPY Gemfile Gemfile.lock /myapp/
@@ -34,11 +34,11 @@ RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile \
 ENV RAILS_SERVE_STATIC_FILES="true"
 
 # entrypoint.production.shを複製してシェルスクリプトを実行する
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
+COPY entrypoint.production.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.production.sh
+ENTRYPOINT ["entrypoint.production.sh"]
 
-# コンテナはポート番号を3000で開放する
+# コンテナはポート番号を80で開放する
 EXPOSE 3000
 
 # Railsサーバーが本番環境で起動する(上記ENVで"production"としている)
