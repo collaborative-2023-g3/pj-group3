@@ -5,12 +5,12 @@ import { createRoot } from "react-dom/client";
 import Top from "./pages/Top";
 import { AuthRegister } from "./pages/AuthRegister";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Header } from "./templates/Header";
+/* import { Header } from "./templates/Header"; */
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Header />
+    {/* <Header /> */} {/* application.jsにHeaderを入れるとレイアウトが崩れるので、一旦コメントアウト */}
     <Routes>
       <Route path="/" element={<Top />} />
       <Route exact path="/register" element={<AuthRegister />} />

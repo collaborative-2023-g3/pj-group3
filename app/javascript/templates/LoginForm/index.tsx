@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../../parts/Button';
 import { H3Header } from '../../parts/H3Header';
+import { Header } from '../../templates/Header';
 
 export const LoginForm: React.FC = () => {
   return (
