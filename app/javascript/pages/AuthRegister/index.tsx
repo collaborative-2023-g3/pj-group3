@@ -31,8 +31,13 @@ export const AuthRegister: React.FC = () => {
         },
         body: JSON.stringify(data),
       });
-      const responseData = await response.json();
-      console.log(responseData);
+
+      if (response.ok) {
+        const responseData = await response.json();
+        localStorage.setItem('authToken', responseData.token);
+      } else {
+        throw new Error("サーバーエラーが発生しました。再度お試しください。");
+      }
     } catch (err) {
       console.log(err);
     }
