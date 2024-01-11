@@ -1,6 +1,6 @@
 import { Header } from "../../templates/Header";
 import { useForm, SubmitHandler } from "react-hook-form";
-
+import prefectures from "../../utility/prefecture";
 
 type Inputs = {
   username: string,
@@ -10,7 +10,9 @@ type Inputs = {
   userType: number,
   tokens: string,
   zipcode: number,
-  address: string,
+  prefecture: string,
+  city: string,
+  block: string,
   phoneNumber: number,
 }
 
@@ -96,11 +98,37 @@ export const AuthRegister: React.FC = () => {
             pattern: { value: /^\d{7}$/, message: "有効な郵便番号7桁を半角入力してください (例: 1234567) " }
           })} />
 
-          <div className="p-signup__form--label-with-validation-message">
-            <label htmlFor="address">住所</label>
-            {errors.address?.message && <span>{errors.address.message}</span>}
+          <div className="p-signup__form--address-block">
+
+            <div className="p-signup__form--prefecture">
+              <div className="p-signup__form--label-with-validation-message">
+                {/* <div className="p-signup__form--prefecture"> */}
+                <label htmlFor="prefecture">都道府県</label>
+                {errors.prefecture?.message && <span>{errors.prefecture.message}</span>}
+              </div>
+              <select {...register("prefecture", { required: "都道府県を選択してください。" })}>
+                <option value="">選択してください</option>
+                {prefectures.map((prefecture) => (
+                  <option value={prefecture} key={prefecture}>{prefecture}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="p-signup__form--city">
+              <div className="p-signup__form--label-with-validation-message">
+                <label htmlFor="city">市区町村</label>
+                {errors.city?.message && <span>{errors.city.message}</span>}
+              </div>
+              <input type="text" {...register("city", { required: "市区町村を入力してください。" })} />
+            </div>
+
           </div>
-          <input type="text" {...register("address", { required: "住所は必須です。" })} />
+
+          <div className="p-signup__form--label-with-validation-message">
+            <label htmlFor="block">番地・建物名など</label>
+            {errors.block?.message && <span>{errors.block.message}</span>}
+          </div>
+          <input type="text" {...register("block", { required: "番地や建物名を入力してください。" })} />
 
           <div className="p-signup__form--label-with-validation-message">
             <label htmlFor="phoneNumber">電話番号</label>
@@ -112,8 +140,8 @@ export const AuthRegister: React.FC = () => {
           })} />
 
           <button type="submit" disabled={!isValid || isSubmitting}>新規会員登録する</button>
-        </form>
-      </div>
-    </div>
+        </form >
+      </div >
+    </div >
   )
 };

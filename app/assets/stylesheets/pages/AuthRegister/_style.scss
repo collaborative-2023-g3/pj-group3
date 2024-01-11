@@ -26,12 +26,14 @@
     input[type="email"],
     input[type="radio"],
     input[type="tel"],
+    input[type="select"],
     input[type="password"] {
-      padding: 0.5rem 2rem;
+      padding: 0.5rem 0.5rem;
       margin-bottom: 1.5rem;
       background-color: white;
       border: 1px solid gray;
       border-radius: 4px;
+      text-align: left;
     }
 
     button {
@@ -51,10 +53,6 @@
       &:hover {
         background-color: darken(#ffa500, 10%);
       }
-    }
-
-    &--error {
-      border: 1px solid red;
     }
 
     &--user-type {
@@ -86,6 +84,21 @@
         color: red;
         font-weight: 600;
         font-size: 0.8rem;
+      }
+    }
+
+    &--address-block {
+      display: flex;
+      width: 100%;
+
+      &--prefecture {
+        flex: 0 0 40%; // 40%の幅を取る
+        // flex-shrink: 0;
+      }
+
+      &--city {
+        flex-grow: 1;
+        flex: 0 0 60%; // 60%の幅を取る
       }
     }
   }
