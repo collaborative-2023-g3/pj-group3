@@ -38,6 +38,7 @@ export const AuthRegister: React.FC = () => {
 
   return (
     <div className="l-container">
+      <Header />
       <div className="p-signup">
         <h1 className="p-signup__title">会員登録</h1>
         <p className="p-signup__description">下記の情報を入力して、「新規会員登録する」ボタンを押してください。</p>
