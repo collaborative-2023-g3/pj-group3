@@ -22,19 +22,28 @@ export const AuthRegister: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
     try {
       const response = await fetch("http://localhost:3000/v1/auth", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(data),
+
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+          password_confirmation: data.passwordConfirmation,
+          user_name: data.username,
+          user_type: data.userType
+        }),
       });
 
       if (response.ok) {
-        const responseData = await response.json();
-        localStorage.setItem('authToken', responseData.token);
+        const accessToken = response.headers.get('access-token');
+        if (accessToken) {
+          localStorage.setItem('authToken', accessToken);
+        }
+
       } else {
         throw new Error("サーバーエラーが発生しました。再度お試しください。");
       }
