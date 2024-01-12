@@ -4,10 +4,9 @@ set -e
 # Remove a potentially pre-existing server.pid for Rails.
 rm -f /myapp/tmp/pids/server.pid
 
-# 本番環境（AWS ECS）への初回デプロイ時に利用
-# TODO : 初回デプロイ後にコメントアウトする
+# DB作成
 bundle exec rails db:create
-# --------------------------------------
+
 # マイグレーション処理
 bundle exec rails db:migrate
 
