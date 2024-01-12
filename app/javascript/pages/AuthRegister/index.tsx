@@ -1,6 +1,10 @@
-import { Header } from "../../templates/Header";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import { Header } from "../../templates/Header";
 import prefectures from "../../utility/prefecture";
+
 
 type Inputs = {
   username: string,
@@ -17,6 +21,8 @@ type Inputs = {
 }
 
 export const AuthRegister: React.FC = () => {
+  const navigate = useNavigate();
+  const [flashMessage, setFlashMessage] = useState<string>("");
   const { register, handleSubmit, watch, formState: { errors, isValid, isSubmitting } } = useForm<Inputs>({
     mode: "onBlur", // フォーカスが外れたらvalidationが走ってくれる
   });
@@ -39,9 +45,16 @@ export const AuthRegister: React.FC = () => {
       });
 
       if (response.ok) {
+        // レスポンスヘッダーからアクセストークンを取得
         const accessToken = response.headers.get('access-token');
+
         if (accessToken) {
+          // ローカルストレージにアクセストークンを保存
           localStorage.setItem('authToken', accessToken);
+          // フラッシュメッセージを表示
+          // setFlashMessage("会員登録が完了しました。");
+          // トップページへリダイレクト
+          navigate("/");
         }
 
       } else {
