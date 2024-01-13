@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_03_025354) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_13_123327) do
+  create_table "cats", charset: "utf8mb4", comment: "猫テーブル", force: :cascade do |t|
+    t.integer "cat_id", null: false, comment: "猫ID"
+    t.string "name", null: false, comment: "名前"
+    t.string "breed", null: false, comment: "猫種"
+    t.string "image", null: false, comment: "写真"
+    t.date "date_of_birth", comment: "生年月日"
+    t.integer "sex", null: false, comment: "雌雄(1:オス or 2:メス)"
+    t.integer "status", null: false, comment: "募集ステータス(1:募集中 or 2:お見合い中 or 3:里親決定)"
+    t.string "uid", null: false, comment: "募集者"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sample_models", charset: "utf8mb4", comment: "サンプルモデルのテーブル", force: :cascade do |t|
     t.string "name", comment: "sample名"
     t.text "description", comment: "sample詳細説明"
@@ -30,4 +43,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_03_025354) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
+
 end

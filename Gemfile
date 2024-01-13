@@ -5,6 +5,7 @@ ruby "3.2.2"
 
 # 開発環境〜本番環境
 gem "bootsnap", require: false
+gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
 gem "devise_token_auth"
