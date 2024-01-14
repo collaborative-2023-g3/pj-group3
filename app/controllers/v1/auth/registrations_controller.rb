@@ -1,5 +1,7 @@
 module V1
   module Auth
+    # RegistrationsController はユーザー登録処理を担うコントローラ
+    # DeviseTokenAuth gemを拡張して、特定の登録パラメータを許可
     class RegistrationsController < DeviseTokenAuth::RegistrationsController
       private
 
