@@ -3,6 +3,9 @@ module V1
   class CatsController < ApplicationController
     before_action :set_cat, only: %i[destroy]
 
+    # 募集ステータス 1:募集中に設定
+    CAN_APPLY_STATUS = 1
+
     def index
       render json: { cats: Cat.all.order("created_at DESC") }
     end
@@ -11,7 +14,7 @@ module V1
       cat = Cat.new(cat_params)
       max_cat_id = Cat.maximum(:cat_id) || 0
       cat[:cat_id] = max_cat_id + 1
-      cat[:status] = 1
+      cat[:status] = CAN_APPLY_STATUS
       cat.save
     end
 
