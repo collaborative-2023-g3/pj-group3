@@ -1,4 +1,4 @@
-@use '../../utility/colors' as *;
+@use "../../utility/colors" as *;
 
 .p-signup {
   width: 80%;
@@ -22,20 +22,19 @@
     flex-direction: column;
     padding: 2rem 5.5rem;
 
-    p {
-      margin-bottom: 3px;
-    }
-
     input[type="text"],
     input[type="email"],
+    input[type="radio"],
+    input[type="tel"],
+    input[type="select"],
     input[type="password"] {
-      padding: 0.5rem 2rem;
+      padding: 0.5rem 0.5rem;
       margin-bottom: 1.5rem;
       background-color: white;
       border: 1px solid gray;
       border-radius: 4px;
+      text-align: left;
     }
-
 
     button {
       width: 50%;
@@ -48,11 +47,58 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      text-align: center;;
+      text-align: center;
       transition: background-color 0.3s;
 
       &:hover {
         background-color: darken(#ffa500, 10%);
+      }
+    }
+
+    &--user-type {
+      display: flex;
+      margin-top: 0.4rem;
+      input[type="radio"] {
+        margin-right: 0.5rem;
+      }
+      label {
+        margin-right: 1rem;
+      }
+    }
+
+    &--label-with-validation-message {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3px;
+
+      label {
+        display: flex;
+        align-items: center;
+        margin-right: 12px;
+        // input[type="radio"] {
+        //   margin-right: 0.5rem;
+        // }
+      }
+
+      span {
+        color: red;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+    }
+
+    &--address-block {
+      display: flex;
+      width: 100%;
+
+      &--prefecture {
+        flex: 0 0 40%; // 40%の幅を取る
+        // flex-shrink: 0;
+      }
+
+      &--city {
+        flex-grow: 1;
+        flex: 0 0 60%; // 60%の幅を取る
       }
     }
   }
