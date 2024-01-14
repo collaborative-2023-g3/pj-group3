@@ -10,12 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_03_025354) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_14_055409) do
+  create_table "profiles", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "zip_code"
+    t.string "prefecture"
+    t.string "city"
+    t.string "block"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "sample_models", charset: "utf8mb4", comment: "サンプルモデルのテーブル", force: :cascade do |t|
     t.string "name", comment: "sample名"
     t.text "description", comment: "sample詳細説明"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_profiles", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "uid", null: false
+    t.string "zip_code", limit: 7
+    t.string "prefecture"
+    t.string "city"
+    t.string "block"
+    t.string "phone_number"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", comment: "利用者テーブル", force: :cascade do |t|
@@ -30,4 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_03_025354) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
+
+  add_foreign_key "profiles", "users"
+  add_foreign_key "user_profiles", "users"
 end
