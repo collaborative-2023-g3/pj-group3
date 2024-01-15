@@ -5,8 +5,8 @@ services:
     image: mysql:5.7
     environment:
       TZ: Asia/Tokyo
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_USER: ${DATABASE_USERNAME}
     ports:
       - "3306:3306"
     volumes:
@@ -24,6 +24,8 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    env_file:
+      - .env
     environment:
       RAILS_ENV: development #追加
   web:
@@ -34,6 +36,10 @@ services:
       - tmp-data:/myapp/tmp
     ports:
       - 80:80
+    env_file:
+      - .env
+    environment:
+      - SERVER_NAME=${SERVER_NAME}
     depends_on:
       - rails
 volumes:
