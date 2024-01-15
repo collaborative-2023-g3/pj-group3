@@ -73,7 +73,7 @@ export const AuthRegister: React.FC = () => {
         <p className="p-signup__description">下記の情報を入力して、「新規会員登録する」ボタンを押してください。</p>
         <form className="p-signup__form" onSubmit={handleSubmit(onSubmit)}>
           <div className="p-signup__form--label-with-validation-message">
-            <label htmlFor="username">ユーザー名</label>
+            <label htmlFor="username">氏名</label>
             {errors.username?.message && <span>{errors.username.message}</span>}
           </div>
           <input type="text" name="username" ref={register({ required: "ユーザー名は必須です。" })} />
