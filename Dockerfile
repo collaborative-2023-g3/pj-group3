@@ -1,6 +1,7 @@
 # alpineで軽量化する
 FROM ruby:3.2.2-alpine
 
+
 # Dockerfile内で使う変数としてRUNTIME_PACKAGESとDEV_PACKAGESの２つを定義する
 ARG RUNTIME_PACKAGES="bash imagemagick nodejs yarn tzdata mysql-dev mysql-client git"
 ARG DEV_PACKAGES="build-base curl-dev"

@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   db:
     container_name: db
@@ -6,7 +8,6 @@ services:
     environment:
       TZ: Asia/Tokyo
       MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
-      MYSQL_USER: ${DATABASE_USERNAME}
     ports:
       - "3306:3306"
     volumes:
