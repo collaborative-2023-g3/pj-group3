@@ -4,12 +4,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
-  host: db # Dockerをつかっている場合こっち使って
+  # host: db # Dockerをつかっている場合こっち使って
 
 development:
   <<: *default
   database: myapp_development
-  # host: 127.0.0.1 # 自分のマシンでrails sを実行する場合こっち使って
+  host: 127.0.0.1 # 自分のマシンでrails sを実行する場合こっち使って
 
 # see : https://qiita.com/koda_7932/items/6913ca184cb289e4ec16
 production:
