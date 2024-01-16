@@ -5,7 +5,7 @@ set -e
 rm -f /myapp/tmp/pids/server.pid
 
 # DB作成
-bundle exec rails db:create
+# bundle exec rails db:create
 
 # マイグレーション処理
 bundle exec rails db:migrate
