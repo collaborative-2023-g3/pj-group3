@@ -1,0 +1,12 @@
+FROM nginx:alpine
+
+# インクルード用のディレクトリ内を削除
+RUN rm -f /etc/nginx/conf.d/*
+
+# Nginxの設定ファイルをコンテナにコピー
+ADD nginx.conf /etc/nginx/conf.d/myapp.conf
+
+# ビルド完了後にNginxを起動
+CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
+
+# see : https://qiita.com/eighty8/items/0288ab9c127ddb683315#db%E6%8E%A5%E7%B6%9A%E7%94%A8%E3%81%AE%E6%83%85%E5%A0%B1%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB
