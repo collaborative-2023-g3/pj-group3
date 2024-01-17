@@ -35,7 +35,7 @@ docker-compose run web rails test
 
 (例)
 ```
-docker-compose run web rails db:create
+docker-compose run rails rails db:create
 ```
 
 ### gemが反映されない
