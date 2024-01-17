@@ -3,7 +3,6 @@ module V1
     # RegistrationsController はユーザー登録処理を担うコントローラ
     # DeviseTokenAuth gemを拡張して、特定の登録パラメータを許可
     class RegistrationsController < DeviseTokenAuth::RegistrationsController
-      #before_action :configure_permitted_parameters, only: [:create]
       # POST /resource
       def create
         super do |resource|
@@ -11,7 +10,9 @@ module V1
           @profile.save
         end
       end
+
       private
+
       def sign_up_params
         params.permit(:email, :password, :user_name, :user_type)
       end
