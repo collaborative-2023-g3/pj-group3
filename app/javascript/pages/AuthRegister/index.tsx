@@ -28,7 +28,6 @@ export const AuthRegister: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
     try {
       const response = await fetch("http://localhost:3000/v1/auth", {
         method: "POST",
