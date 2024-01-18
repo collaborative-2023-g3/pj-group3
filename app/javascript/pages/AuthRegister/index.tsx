@@ -28,6 +28,7 @@ export const AuthRegister: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log(data);
     try {
       const response = await fetch("http://localhost:3000/v1/auth", {
         method: "POST",
@@ -40,7 +41,12 @@ export const AuthRegister: React.FC = () => {
           password: data.password,
           password_confirmation: data.passwordConfirmation,
           user_name: data.username,
-          user_type: data.userType
+          user_type: data.userType,
+          zip_code: data.zipcode,
+          prefecture: data.prefecture,
+          city: data.city,
+          block: data.block,
+          phone_number: data.phoneNumber,
         }),
       });
 
