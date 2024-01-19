@@ -1,11 +1,14 @@
 #!/bin/bash
 set -e
 
+# Remove a potentially pre-existing server.pid for Rails.
 rm -f /myapp/tmp/pids/server.pid
 
-# DB作成 && マイグレーション処理(ここ実行するとmysqlの起動間に合わずこける)
+# DB作成
 # bundle exec rails db:create
-# bundle exec rails db:migrate
+
+# マイグレーション処理
+bundle exec rails db:migrate
 
 # Then exec the container's main process (what's set as CMD in the Dockerfile).
 exec "$@"
