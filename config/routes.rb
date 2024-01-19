@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :v1 do
-    mount_devise_token_auth_for "User", at: "auth"
+    mount_devise_token_auth_for "User", at: "auth", controllers: {
+      registrations: "v1/auth/registrations",
+      sign_in: "v1/auth/sign_in"
+    }
     resources :cats, only: %i[index create destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

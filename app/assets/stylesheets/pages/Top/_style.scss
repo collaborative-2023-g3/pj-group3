@@ -1,5 +1,30 @@
 @use '../../utility/colors' as *;
 
+input[type="email"],
+input[type="password"] {
+  padding: 0.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
 .p-top{
   margin: 50px 70px;
+
+  &--label-with-validation-message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+span {
+  color: red;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
