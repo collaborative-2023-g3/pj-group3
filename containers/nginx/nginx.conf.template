@@ -21,6 +21,7 @@ server {
   error_page 505 502 503 504 /500.html;
   try_files  $uri/index.html $uri @myapp;
   keepalive_timeout 5;
+  sendfile        off;
 
   # リバースプロキシ関連の設定
   location @myapp {
@@ -28,5 +29,10 @@ server {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header Host $http_host;
     proxy_pass http://myapp;
+
+    # キャッシュを無視する設定
+    proxy_ignore_headers Cache-Control Expires;
+    proxy_no_cache 1;
+    proxy_cache_bypass 1;
   }
 }

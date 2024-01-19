@@ -1,11 +1,10 @@
-# 基本イメージとしてnginxのalpineバージョンを使用
 FROM nginx:alpine
 
-# 既存の設定ファイルを削除
+# インクルード用のディレクトリ内を削除
 RUN rm -f /etc/nginx/conf.d/*
 
-# 設定ファイルのテンプレートをコンテナにコピー
+# Nginxの設定ファイルをコンテナにコピー
 ADD nginx.conf /etc/nginx/conf.d/myapp.conf
 
-# コンテナ起動時に環境変数を使用して実際の設定ファイルを生成し、Nginxを起動
+# ビルド完了後にNginxを起動
 CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
