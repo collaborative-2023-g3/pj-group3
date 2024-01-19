@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_21_024104) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_14_055409) do
+  create_table "profiles", charset: "utf8mb4", comment: "プロフィールテーブル", force: :cascade do |t|
+    t.string "zip_code", limit: 7, comment: "郵便番号"
+    t.string "prefecture", comment: "都道府県"
+    t.string "city", comment: "市区町村"
+    t.string "block", comment: "番地"
+    t.string "phone_number", comment: "電話番号"
+    t.bigint "user_id", null: false, comment: "usersテーブルへの外部キー"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "sample_models", charset: "utf8mb4", comment: "サンプルモデルのテーブル", force: :cascade do |t|
     t.string "name", comment: "sample名"
     t.text "description", comment: "sample詳細説明"
@@ -18,4 +30,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_21_024104) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", charset: "utf8mb4", comment: "利用者テーブル", force: :cascade do |t|
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false, comment: "パスワード"
+    t.string "user_name", null: false, comment: "氏名"
+    t.string "email", null: false, comment: "メールアドレス"
+    t.integer "user_type", null: false, comment: "ユーザータイプ(1:募集者 or 2:応募者)"
+    t.text "tokens"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  add_foreign_key "profiles", "users"
 end
