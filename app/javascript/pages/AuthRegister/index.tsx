@@ -9,6 +9,7 @@ import { FormTemplate } from "../../templates/FormTemplate";
 import { Button } from "../../parts/Button";
 import { PageTemplate } from "../../templates/PageTemplate";
 import { ContainerTemplate } from "../../templates/ContainerTemplate";
+import { signUpUrl } from "../../utility/urls";
 
 
 type Inputs = {
@@ -34,7 +35,7 @@ export const AuthRegister: React.FC = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const response = await fetch("http://localhost:3000/v1/auth", {
+      const response = await fetch(signUpUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

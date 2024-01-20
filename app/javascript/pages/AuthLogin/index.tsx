@@ -7,7 +7,12 @@ import { FormTemplate } from "../../templates/FormTemplate";
 import { H2Header } from '../../parts/H2Header';
 import { PageTemplate } from '../../templates/PageTemplate';
 import { ContainerTemplate } from '../../templates/ContainerTemplate';
+import { signInURL } from "../../utility/urls";
 
+type Inputs = {
+  email: string;
+  password: string;
+};
 
 export const AuthLogin: React.FC = () => {
   const navigate = useNavigate();
@@ -18,7 +23,7 @@ export const AuthLogin: React.FC = () => {
 
   const onSubmit = async (data: Inputs) => {
     try {
-      const response = await fetch('http://localhost:3000/v1/auth/sign_in', {
+      const response = await fetch(signInURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
