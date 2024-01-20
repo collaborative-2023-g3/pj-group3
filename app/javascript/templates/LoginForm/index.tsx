@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../parts/button';
+import { Button } from '../../parts/Button';
 import { H3Header } from '../../parts/H3Header';
 
 type Inputs = {
@@ -55,7 +55,7 @@ export const LoginForm: React.FC = () => {
             {errors.email.message}
           </span>
         )}
-        <input type="email" id="email" name="email" ref={register({ 
+        <input type="email" id="email" name="email" ref={register({
           required: 'メールアドレスを入力してください',
           pattern: {
             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -70,7 +70,7 @@ export const LoginForm: React.FC = () => {
             {errors.password.message}
           </span>
         )}
-        <input type="password" id="password" name="password" ref={register({ 
+        <input type="password" id="password" name="password" ref={register({
           required: 'パスワードを入力してください',
           minLength: {
             value: 6,
