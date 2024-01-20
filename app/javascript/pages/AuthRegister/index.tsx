@@ -8,6 +8,7 @@ import { H2Header } from "../../parts/H2Header";
 import { FormTemplate } from "../../templates/FormTemplate";
 import { Button } from "../../parts/Button";
 import { PageTemplate } from "../../templates/PageTemplate";
+import { ContainerTemplate } from "../../templates/ContainerTemplate";
 
 
 type Inputs = {
@@ -75,7 +76,7 @@ export const AuthRegister: React.FC = () => {
   }
 
   return (
-    <div className="l-container">
+    <ContainerTemplate>
       <Header />
       <PageTemplate>
         <H2Header>会員登録</H2Header>
@@ -171,6 +172,6 @@ export const AuthRegister: React.FC = () => {
           </div>
         </FormTemplate>
       </PageTemplate>
-    </div >
+    </ContainerTemplate >
   )
 };

@@ -6,6 +6,7 @@ import { Header } from '../../templates/Header';
 import { FormTemplate } from "../../templates/FormTemplate";
 import { H2Header } from '../../parts/H2Header';
 import { PageTemplate } from '../../templates/PageTemplate';
+import { ContainerTemplate } from '../../templates/ContainerTemplate';
 
 
 export const AuthLogin: React.FC = () => {
@@ -45,7 +46,7 @@ export const AuthLogin: React.FC = () => {
   };
 
   return (
-    <div className="l-container">
+    <ContainerTemplate>
       <Header />
       <PageTemplate>
         <H2Header>会員ログイン</H2Header>
@@ -89,6 +90,6 @@ export const AuthLogin: React.FC = () => {
         )}
         </FormTemplate>
       </PageTemplate>
-    </div>
+    </ContainerTemplate>
   );
 };
