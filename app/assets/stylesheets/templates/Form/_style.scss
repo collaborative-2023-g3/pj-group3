@@ -1,0 +1,50 @@
+@use '../../utility/colors' as *;
+
+.t-form, .t-login{
+  margin: 30px auto;
+  border: 2px solid $lightBrown;
+  padding: 24px;
+
+  &__input {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .--validation-message{
+      color: $orange;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+  }
+
+  // 会員登録がdivから外に出てしまっているので、調整する時間もなくここに書く
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid $lightBrown;
+    border-radius: 4px;
+  }
+
+  input[type="radio"] {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    width: 1em; /* ラジオボタンのサイズを指定 */
+    height: 1em; /* ラジオボタンのサイズを指定 */
+  }
+
+  &__button{
+    margin-top: 10px;
+    text-align: center;
+  }
+}

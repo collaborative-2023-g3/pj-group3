@@ -1,52 +1,31 @@
 @use "../../utility/colors" as *;
 
 .p-signup {
-  width: 80%;
-  margin: 0 auto;
-  padding: 3rem;
-
-  &__title {
-    text-align: left;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  &__description {
-    font-size: 1.2rem;
-    margin: 1.2rem 0 2.5rem 0;
-  }
-
+  // ★レイアウトトップにmargin/padding設定禁止！
   &__form {
-    background: #f5f5f5; // 背景色は適宜調整
     display: flex;
     flex-direction: column;
     padding: 2rem 5.5rem;
 
     input[type="text"],
     input[type="email"],
-    input[type="radio"],
     input[type="tel"],
-    input[type="password"] {
-      padding: 0.5rem 0.5rem;
-      margin-bottom: 1.5rem;
-      background-color: white;
-      border: 1px solid gray;
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+      line-height: 1.5;
+      border: 1px solid $lightBrown;
       border-radius: 4px;
-      text-align: left;
     }
 
-    select {
-      padding: 0.5rem 0.5rem;
-      margin-bottom: 1.5rem;
-      background-color: white;
-      border: 1px solid gray;
-      border-radius: 4px;
-      text-align: left;
-      appearance: menulist;
-      box-shadow: none;
-      font-size: 0.8rem;
-      text-overflow: ellipsis;
-      cursor: pointer;
+    input[type="radio"] {
+      margin: 0;
+      box-sizing: border-box;
+      padding: 0;
+      width: 1em; /* ラジオボタンのサイズを指定 */
+      height: 1em; /* ラジオボタンのサイズを指定 */
     }
 
     button {
@@ -88,9 +67,6 @@
         display: flex;
         align-items: center;
         margin-right: 12px;
-        // input[type="radio"] {
-        //   margin-right: 0.5rem;
-        // }
       }
 
       span {
