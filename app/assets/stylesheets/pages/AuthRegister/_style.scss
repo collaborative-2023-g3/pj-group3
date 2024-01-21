@@ -2,50 +2,8 @@
 
 .p-signup {
   // ★レイアウトトップにmargin/padding設定禁止！
+  // 本当はformのCSS入らないけどリファクタリングの時間がない。。。。。。。。。
   &__form {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 5.5rem;
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="password"],
-    select {
-      width: 100%;
-      padding: 8px;
-      font-size: 1rem;
-      line-height: 1.5;
-      border: 1px solid $lightBrown;
-      border-radius: 4px;
-    }
-
-    input[type="radio"] {
-      margin: 0;
-      box-sizing: border-box;
-      padding: 0;
-      width: 1em; /* ラジオボタンのサイズを指定 */
-      height: 1em; /* ラジオボタンのサイズを指定 */
-    }
-
-    button {
-      width: 50%;
-      margin: 0 auto;
-      padding: 1rem;
-      background-color: #ffa500; // 背景色は適宜調整
-      color: white;
-      font-weight: bold;
-      margin-top: 2rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: darken(#ffa500, 10%);
-      }
-    }
 
     &--user-type {
       display: flex;
@@ -62,12 +20,6 @@
       display: flex;
       align-items: center;
       margin-bottom: 3px;
-
-      label {
-        display: flex;
-        align-items: center;
-        margin-right: 12px;
-      }
 
       span {
         color: red;
