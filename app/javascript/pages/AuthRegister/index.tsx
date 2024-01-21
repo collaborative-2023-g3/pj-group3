@@ -40,7 +40,7 @@ export const AuthRegister: React.FC = () => {
         headers: {
           "Content-Type": "application/json"
         },
-
+        credentials: 'include',
         body: JSON.stringify({
           email: data.email,
           password: data.password,
