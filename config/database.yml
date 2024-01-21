@@ -3,8 +3,8 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: password
-  host: <%= ENV['DATABASE_HOST'] %> # Dockerをつかっている場合こっち使って
+  password: "password"
+  host: db
 
 development:
   <<: *default
