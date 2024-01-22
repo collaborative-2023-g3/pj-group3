@@ -13,7 +13,7 @@ services:
     volumes:
       - db-volume:/var/lib/mysql
   rails:
-    container_name: rails
+    container_name: rails_pj-group5
     build: .
     command: bundle exec puma -C config/puma.rb
     volumes:
@@ -30,7 +30,6 @@ services:
     environment:
       RAILS_ENV: development #追加
   web:
-    container_name: web
     build:
       context: containers/nginx
     volumes:

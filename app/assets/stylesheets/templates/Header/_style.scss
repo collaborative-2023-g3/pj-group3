@@ -17,7 +17,9 @@
       &:first-child {
         margin-right: 20px;
       }
-      color: $orange;
+      a{
+        color: $orange;
+      }
     }
   }
 }
