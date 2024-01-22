@@ -1,6 +1,7 @@
 module Api
   module V1
     module Auth
+      # description: ユーザー登録時にプロフィールも同時に作成するためにオーバーライド
       class RegistrationsController < DeviseTokenAuth::RegistrationsController
         # POST /resource
         def create
