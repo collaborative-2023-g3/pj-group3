@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
-  namespace :v1 do
-    mount_devise_token_auth_for "User", at: "auth", controllers: {
-      registrations: "v1/auth/registrations",
-      sign_in: "v1/auth/sign_in"
-    }
-  end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # apiルーティング---------------------------------
+  namespace :api do
+    namespace :v1 do
+      # devise用ルーティング
+      # prefix :http://localhost:3000/api/v1/auth/***
+      mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+        registrations: 'api/v1/auth/registrations',
+        sign_in: "api/v1/auth/sign_in"
+      }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+      # devise以外のルーティング
+      # prefix :http://localhost:3000/api/v1/**
+    end
+  end
+
+  # webルーティング(for React)---------------------------------
+  # prefix :http://localhost:3000/***
   root "top#index"
-  get '*path', to: 'top#index', format: false # これがないとRailsがフロントエンド側のルーティングを認識できないため、任意のパスは全てリダイレクトする
+  # これがないとRailsがフロントエンド側のルーティングを認識できないため、任意のパスは全てリダイレクトする
+  get '*path', to: 'top#index', format: false
 end
