@@ -57,14 +57,16 @@ export const AuthRegister: React.FC = () => {
 
       if (response.ok) {
         // レスポンスヘッダーからアクセストークンを取得
-        const responseData = await response.json(); // JSONデータを取得
-        const token = responseData.token; // 'token' プロパティを取得
+        const access_token = response.headers.get('access-token');
+        // const responseData = await response.json(); // JSONデータを取得
+        // const token = responseData.token; // 'token' プロパティを取得
 
-        if (token) {
+
+        if (access_token) {
           // ローカルストレージにアクセストークンを保存
-          localStorage.setItem('token', token);
+          localStorage.setItem('authToken', access_token);
           // フラッシュメッセージを表示
-          // setFlashMessage("会員登録が完了しました。");
+          setFlashMessage("会員登録が完了しました。");
           // トップページへリダイレクト
           navigate("/");
         }

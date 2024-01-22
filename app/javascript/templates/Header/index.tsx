@@ -3,11 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate(); // ここで useNavigate を呼び出す
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem('authToken')
 
   // ログアウトボタンのクリックハンドラ
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('authToken');
     navigate('/'); // 既に定義された navigate を使用
   };
 
