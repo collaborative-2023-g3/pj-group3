@@ -32,11 +32,12 @@ export const AuthLogin: React.FC = () => {
       });
 
       if (response.ok) {
-        const access_token = response.headers.get('access-token');
+        const responseData = await response.json(); // JSONデータを取得
+        const token = responseData.token; // 'token' プロパティを取得
 
-        if (access_token) {
+        if (token) {
           // セキュリティ上の注意: アクセストークンを安全に保存する他の手段を検討する
-          localStorage.setItem('access-token', access_token);
+          localStorage.setItem('token', token);
           setFlashMessage('ログインしました。');
           navigate('/');
         }

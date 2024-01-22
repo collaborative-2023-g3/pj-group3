@@ -12,6 +12,7 @@ gem 'dotenv'
 gem "importmap-rails"
 gem "jbuilder"
 gem 'jsbundling-rails' # for React
+gem 'jwt'
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
 gem 'rack-cors', require: 'rack/cors'
