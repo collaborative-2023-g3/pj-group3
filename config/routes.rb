@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # webルーティング(for React)---------------------------------
   # prefix :http://localhost:3000/***
-  # これがないとRailsがフロントエンド側のルーティングを認識できないため、任意のパスは全てリダイレクトする
   root "top#index"
+  # これがないとRailsがフロントエンド側のルーティングを認識できないため、任意のパスは全てリダイレクトする
   get '*path', to: 'top#index', format: false
 end
