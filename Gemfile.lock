@@ -123,6 +123,7 @@ GEM
     jsbundling-rails (1.2.1)
       railties (>= 6.0.0)
     json (2.7.1)
+    jwt (2.7.1)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -300,6 +301,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jsbundling-rails
+  jwt
   mysql2 (~> 0.5)
   puma (~> 5.0)
   rack-cors
