@@ -15,7 +15,7 @@ gem "jbuilder"
 gem 'jsbundling-rails' # for React
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"
-gem "rack-cors"
+gem 'rack-cors', require: 'rack/cors'
 gem "rails", "~> 7.0.8"
 gem "sprockets-rails"
 gem "stimulus-rails"
