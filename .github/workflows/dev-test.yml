@@ -1,6 +1,7 @@
 # このファイルは、GitHub Actions でテスト/rubocopを実行するための設定ファイルです。
 # 時間があればreviewdogを導入したい
 # - https://qiita.com/ken1flan/items/a28e08eee5e5cf061232
+# WIPです-----------
 name: "test"
 on:
   push:

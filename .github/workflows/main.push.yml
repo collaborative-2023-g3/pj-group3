@@ -1,0 +1,17 @@
+name: push image to ECR and deploy to ECS
+on: push
+  # pull_request:
+  #   branches:
+  #     - main
+  #   types: [closed]
+
+jobs:
+  push:
+    name: push image to ECR and deploy to ECS
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3

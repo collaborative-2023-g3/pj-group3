@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { LoginForm } from '../../templates/LoginForm';
 import { H2Header } from '../../parts/H2Header';
 import { Header } from '../../templates/Header';
+import { ContainerTemplate } from '../../templates/ContainerTemplate';
+import { PageTemplate } from '../../templates/PageTemplate';
 
 const Top: React.FC = () => {
   return (
-    <div className="l-container">
+    <ContainerTemplate>
       <Header />
-        <div className="p-top">
-          <H2Header>会員ログイン</H2Header>
-          <p className="p-top__description">メールアドレスとパスワードを入力して「ログイン」ボタンを押してください。</p>
-        <LoginForm />
-      </div>
-    </div>
+      <PageTemplate>
+          <H2Header>猫募集一覧</H2Header>
+          <p className="p-top__description">お気に入りの猫を見つけよう♪</p>
+      </PageTemplate>
+    </ContainerTemplate>
   );
 };
 
