@@ -2,9 +2,8 @@
 
 .p-top{
   // ★レイアウトトップにmargin/padding設定禁止！
-  &--label-with-validation-message {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3px;
+  &__cat-list{
+    // gridで加工
   }
+
 }
