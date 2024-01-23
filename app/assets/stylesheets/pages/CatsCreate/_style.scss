@@ -1,0 +1,226 @@
+@use "../../utility/colors" as *;
+
+.p-signup {
+  &__form {
+    &--user-type {
+      display: flex;
+      margin-top: 0.4rem;
+
+      input[type="radio"] {
+        margin-right: 0.5rem;
+      }
+      label {
+        margin-right: 1rem;
+      }
+    }
+
+    &--label-with-validation-message {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3px;
+
+      span {
+        color: red;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+    }
+    &--profile-file-label {
+      padding: 10px 40px;
+      border: 1px solid black;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(white, 5%);
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+
+    &--image-preview {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      img {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+// .p-signup {
+//   width: 80%;
+//   //   margin: 0 auto;
+//   //   padding: 3rem;
+
+//   &__title {
+//     text-align: left;
+//     font-size: 2rem;
+//     margin-bottom: 1rem;
+//   }
+
+//   &__description {
+//     font-size: 1.2rem;
+//     margin: 1.2rem 0 2.5rem 0;
+//   }
+
+//   &__form {
+//     background: #f5f5f5; // 背景色は適宜調整
+//     display: flex;
+//     flex-direction: column;
+//     padding: 2rem 5.5rem;
+
+//     input[type="text"],
+//     input[type="email"],
+//     input[type="radio"],
+//     input[type="tel"],
+//     input[type="password"],
+//     input[type="date"] {
+//       padding: 0.5rem 0.5rem;
+//       margin-bottom: 1.5rem;
+//       background-color: white;
+//       border: 1px solid gray;
+//       border-radius: 4px;
+//       text-align: left;
+//     }
+
+//     // input[type="file"] {
+//     //   color: rgb(31, 41, 55);
+//     //   cursor: pointer;
+//     //   border: 1px solid rgb(191, 194, 199);
+//     //   border-radius: 4px;
+//     //   padding-right: 0.5rem;
+//     //   width: 24rem;
+//     //   padding: 0.5rem 0.5rem;
+//     //   margin-bottom: 1.5rem;
+//     //   //   border: 1px solid gray;
+//     //   text-align: left;
+//     // }
+//     // ::file-selector-button,
+//     // ::-webkit-file-upload-button {
+//     //   background-color: rgb(209, 213, 219);
+//     //   color: rgb(31, 41, 55);
+//     //   border: none;
+//     //   cursor: pointer;
+//     //   border-right: 1px solid rgb(191, 194, 199);
+//     //   padding: 0.25rem 1rem;
+//     //   margin-right: 1rem;
+//     // }
+
+//     select {
+//       padding: 0.5rem 0.5rem;
+//       margin-bottom: 1.5rem;
+//       background-color: white;
+//       //   border: 1px solid gray;
+//       border-radius: 4px;
+//       text-align: left;
+//       appearance: menulist;
+//       box-shadow: none;
+//       font-size: 0.8rem;
+//       text-overflow: ellipsis;
+//       cursor: pointer;
+//     }
+
+//     button {
+//       width: 50%;
+//       margin: 0 auto;
+//       padding: 1rem;
+//       background-color: #ffa500; // 背景色は適宜調整
+//       color: white;
+//       font-weight: bold;
+//       margin-top: 8rem;
+//       border: none;
+//       border-radius: 4px;
+//       cursor: pointer;
+//       text-align: center;
+//       transition: background-color 0.3s;
+
+//       &:hover {
+//         background-color: darken(#ffa500, 10%);
+//       }
+//     }
+
+//     &--user-type {
+//       display: flex;
+//       margin-top: 0.4rem;
+//       input[type="radio"] {
+//         margin-right: 0.8rem;
+//       }
+//       label {
+//         position: relative;
+//         top: -0.7rem;
+//         margin-right: 1rem;
+//       }
+//     }
+
+//     &--image {
+//       margin-top: 1rem;
+//       margin-bottom: 2rem;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+//       gap: 2rem;
+
+//       label {
+//         display: inline-block;
+//         text-align: center;
+//         align-items: flex-start;
+//         background-color: white;
+//         padding: 0.5rem 0.5rem;
+//         border: 1px solid gray;
+//         border-radius: 4px;
+//       }
+
+//       label:hover {
+//         cursor: pointer;
+//         background-color: darken(white, 5%);
+//       }
+//       input[type="file"] {
+//         display: none;
+//       }
+//     }
+
+//     &--image-preview {
+//       display: flex;
+//       width: 100%;
+//       justify-content: center;
+//       text-align: center;
+//       img {
+//         width: 200px;
+//         height: 200px;
+//         border-radius: 90%;
+//         object-fit: cover;
+//       }
+//     }
+
+//     // &--profile-image {
+//     // }
+
+//     &--label-with-validation-message {
+//       display: flex;
+//       align-items: center;
+//       margin-bottom: 3px;
+
+//       label {
+//         display: flex;
+//         align-items: center;
+//         margin-right: 15px;
+//         // input[type="radio"] {
+//         //   margin-right: 0.5rem;
+//         // }
+//       }
+
+//       span {
+//         color: red;
+//         font-weight: 600;
+//         font-size: 0.8rem;
+//       }
+//     }
+//   }
+// }

@@ -4,7 +4,6 @@
   // ★レイアウトトップにmargin/padding設定禁止！
   // 本当はformのCSS入らないけどリファクタリングの時間がない。。。。。。。。。
   &__form {
-
     &--user-type {
       display: flex;
       margin-top: 0.4rem;
