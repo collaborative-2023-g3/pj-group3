@@ -60,42 +60,42 @@ export const AuthLogin: React.FC = () => {
         <H2Header>会員ログイン</H2Header>
         <p className="p-signup__description">下記の情報を入力して、「ログイン」ボタンを押してください。</p>
         <FormTemplate onSubmit={handleSubmit(onSubmit)}>
-        <div className="t-form__input --label-with-validation-message">
-          <label htmlFor="email">メールアドレス</label>
-          {errors.email?.message && (
-            <span className="t-login__input --validation-message">
-              {errors.email.message}
-            </span>
+          <div className="t-form__input --label-with-validation-message">
+            <label htmlFor="email">メールアドレス</label>
+            {errors.email?.message && (
+              <span className="t-login__input --validation-message">
+                {errors.email.message}
+              </span>
+            )}
+            <input type="email" id="email" name="email" ref={register({
+              required: 'メールアドレスを入力してください',
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: '無効なEメールアドレスです。',
+              },
+            })} />
+          </div>
+          <div className="t-form__input --label-with-validation-message">
+            <label htmlFor="password">パスワード</label>
+            {errors.password?.message && (
+              <span className="t-form__input --validation-message">
+                {errors.password.message}
+              </span>
+            )}
+            <input type="password" id="password" name="password" ref={register({
+              required: 'パスワードを入力してください',
+              minLength: {
+                value: 6,
+                message: 'パスワードは6文字以上で入力してください',
+              },
+            })} />
+          </div>
+          <div className="t-login__button">
+            <Button type="submit" disabled={!isValid || isSubmitting}>ログイン</Button>
+          </div>
+          {flashMessage && (
+            <div className="flash-message">{flashMessage}</div>
           )}
-          <input type="email" id="email" name="email" ref={register({
-            required: 'メールアドレスを入力してください',
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: '無効なEメールアドレスです。',
-            },
-          })} />
-        </div>
-        <div className="t-form__input --label-with-validation-message">
-          <label htmlFor="password">パスワード</label>
-          {errors.password?.message && (
-            <span className="t-form__input --validation-message">
-              {errors.password.message}
-            </span>
-          )}
-          <input type="password" id="password" name="password" ref={register({
-            required: 'パスワードを入力してください',
-            minLength: {
-              value: 6,
-              message: 'パスワードは6文字以上で入力してください',
-            },
-          })} />
-        </div>
-        <div className="t-login__button">
-          <Button type="submit" disabled={!isValid || isSubmitting}>ログイン</Button>
-        </div>
-        {flashMessage && (
-          <div className="flash-message">{flashMessage}</div>
-        )}
         </FormTemplate>
       </PageTemplate>
     </ContainerTemplate>
