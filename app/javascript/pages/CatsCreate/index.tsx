@@ -68,7 +68,7 @@ export const CatsCreate: React.FC = () => {
 
             if (response.ok) {
                 // todo
-                // console.log('success!');
+
             } else {
                 throw new Error("サーバーエラーが発生しました。再度お試しください。");
             }
@@ -79,7 +79,7 @@ export const CatsCreate: React.FC = () => {
 
     return (
 
-        < ContainerTemplate >
+        <ContainerTemplate>
             <Header />
             <PageTemplate>
                 <H2Header>猫の登録</H2Header>
