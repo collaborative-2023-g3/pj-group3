@@ -35,7 +35,7 @@ export const AuthLogin: React.FC = () => {
         const access_token = response.headers.get('access-token');
         const uid = response.headers.get('uid');
 
-        console.log(access_token)
+        // console.log(access_token)
         // const responseData = await response.json(); // JSONデータを取得
         // const token = responseData.token; // 'token' プロパティを取得
 
