@@ -33,6 +33,8 @@ export const AuthLogin: React.FC = () => {
 
       if (response.ok) {
         const access_token = response.headers.get('access-token');
+        const uid = response.headers.get('uid');
+
         console.log(access_token)
         // const responseData = await response.json(); // JSONデータを取得
         // const token = responseData.token; // 'token' プロパティを取得
@@ -40,6 +42,7 @@ export const AuthLogin: React.FC = () => {
         if (access_token) {
           // セキュリティ上の注意: アクセストークンを安全に保存する他の手段を検討する
           localStorage.setItem('authToken', access_token);
+          localStorage.setItem('uid', uid || '');
           setFlashMessage('ログインしました。');
           navigate('/');
         }
