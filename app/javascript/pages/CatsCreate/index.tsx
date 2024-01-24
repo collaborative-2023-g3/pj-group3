@@ -19,6 +19,7 @@ type Inputs = {
     // status: string,
 }
 
+
 export const CatsCreate: React.FC = () => {
     const navigate = useNavigate();
 
@@ -40,26 +41,34 @@ export const CatsCreate: React.FC = () => {
     }, [watch("image")]);
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
-        console.log(data)
-        try {
-            const response = await fetch("http://localhost:3000/v1/auth", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+        const formData = new FormData();
 
-                body: JSON.stringify({
-                    name: data.name,
-                    breed: data.breed,
-                    dateOfBirth: data.dateOfBirth,
-                    sex: data.sex,
-                    image: data.image,
-                }),
+        try {
+            const dateOfBirth = new Date(data.dateOfBirth);
+            const token = localStorage.getItem('authToken');
+            const uid = localStorage.getItem('uid');
+
+            formData.append('name', data.name);
+            formData.append('breed', data.breed);
+            formData.append('date_of_birth', dateOfBirth.toISOString());
+            formData.append('sex', data.sex.toString());
+            if (data.image.length > 0) {
+                formData.append('image', data.image[0]);
+            }
+            formData.append('uid', uid || "");
+
+
+            const response = await fetch('http://localhost:3000/api/v1/cat', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}` // トークンをヘッダーに含める
+                },
+                body: formData
             });
 
             if (response.ok) {
                 // todo
-
+                // console.log('success!');
             } else {
                 throw new Error("サーバーエラーが発生しました。再度お試しください。");
             }
@@ -69,7 +78,8 @@ export const CatsCreate: React.FC = () => {
     }
 
     return (
-        <ContainerTemplate>
+
+        < ContainerTemplate >
             <Header />
             <PageTemplate>
                 <H2Header>猫の登録</H2Header>
@@ -138,6 +148,6 @@ export const CatsCreate: React.FC = () => {
                     </div>
                 </FormTemplate >
             </PageTemplate>
-        </ContainerTemplate>
+        </ContainerTemplate >
     )
 };
