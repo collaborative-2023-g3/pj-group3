@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Rails.application.credentials.aws[:SECRET_ACCESS_KEY],
       region: 'ap-northeast-1'
     }
-    d
+    config.fog_directory = "/"
     config.asset_host = "http://pj-5bucket.s3.ap-northeast-1.amazonaws.com/"
   else
     config.asset_host = "http://localhost:3000"
