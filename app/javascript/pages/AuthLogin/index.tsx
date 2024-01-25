@@ -33,13 +33,17 @@ export const AuthLogin: React.FC = () => {
 
       if (response.ok) {
         const access_token = response.headers.get('access-token');
+        const client = response.headers.get('client');
+        const uid = response.headers.get('uid');
         console.log(access_token)
         // const responseData = await response.json(); // JSONデータを取得
         // const token = responseData.token; // 'token' プロパティを取得
 
-        if (access_token) {
+        if (access_token && client && uid) {
           // セキュリティ上の注意: アクセストークンを安全に保存する他の手段を検討する
           localStorage.setItem('authToken', access_token);
+          localStorage.setItem('client', client);
+          localStorage.setItem('uid', uid);
           setFlashMessage('ログインしました。');
           navigate('/');
         }

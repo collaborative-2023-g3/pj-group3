@@ -1,0 +1,40 @@
+@use '../../../utility/colors' as *;
+
+.p-cat-show table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: lightbrown;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.p-cat-show th,
+.p-cat-show td {
+  padding: 15px;
+  text-align: left;
+}
+
+.p-cat-show th {
+  color: #333;
+}
+
+.p-cat-show td {
+  text-align: center;
+}
+
+.p-cat-show img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px black;
+  transition: transform 0.2s ease-in-out;
+}
+
+.p-cat-show img:hover {
+  transform: scale(1.1);
+}
