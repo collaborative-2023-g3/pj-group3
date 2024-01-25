@@ -1,15 +1,16 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { H2Header } from '../../parts/H2Header';
-import { Header } from '../../templates/Header';
-import { ContainerTemplate } from '../../templates/ContainerTemplate';
-import { PageTemplate } from '../../templates/PageTemplate';
-import { Button } from '../../parts/Button';
+import { H2Header } from '../../../parts/H2Header';
+import { Header } from '../../../templates/Header';
+import { ContainerTemplate } from '../../../templates/ContainerTemplate';
+import { PageTemplate } from '../../../templates/PageTemplate';
+import { Button } from '../../../parts/Button';
 
 const CatShow: React.FC = () => {
   // React RouterのuseParamsフックを使用して画面遷移前のパラメータから情報を取得
-  const { catId, name, breed, date_of_birth, sex, status, UserUid } = useParams<{
+  const { catId, image, name, breed, date_of_birth, sex, status, UserUid } = useParams<{
     cat_id: string;
+    image: string;
     name: string;
     breed: string;
     date_of_birth: string;
@@ -39,43 +40,47 @@ const CatShow: React.FC = () => {
         <p className="p-top__description">{name}の詳細ページ</p>
         <div className="p-top__container">
           <div className="t-form">
-            <table>
-              <tbody>
-                <tr>
-                  <td colSpan={2}>
-                    <img src="http://pj-5bucket.s3.ap-northeast-1.amazonaws.com/test-cat.png" alt="猫の写真" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>猫のID:</td>
-                  <td>{catId}</td>
-                </tr>
-                <tr>
-                  <td>名前:</td>
-                  <td>{name}</td>
-                </tr>
-                <tr>
-                  <td>猫種:</td>
-                  <td>{breed}</td>
-                </tr>
-                <tr>
-                  <td>生年月日:</td>
-                  <td>{date_of_birth}</td>
-                </tr>
-                <tr>
-                  <td>雌雄:</td>
-                  <td>{genderText}</td>
-                </tr>
-                <tr>
-                  <td>募集ステータス:</td>
-                  <td>{statusText}</td>
-                </tr>
-                <tr>
-                  <td>募集者:</td>
-                  <td>{UserUid}</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="p-cat-show">
+              <table>
+                <tbody>
+                  <tr>
+                    <td colSpan={2}>
+                      /** 一時的に猫の画像を仮表示している */
+                      /** 変更の際はソース部分の変更を行う */
+                      <img src="http://pj-5bucket.s3.ap-northeast-1.amazonaws.com/test-cat.png" alt="猫の写真" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>猫のID:</td>
+                    <td>{catId}</td>
+                  </tr>
+                  <tr>
+                    <td>名前:</td>
+                    <td>{name}</td>
+                  </tr>
+                  <tr>
+                    <td>猫種:</td>
+                    <td>{breed}</td>
+                  </tr>
+                  <tr>
+                    <td>生年月日:</td>
+                    <td>{date_of_birth}</td>
+                  </tr>
+                  <tr>
+                    <td>雌雄:</td>
+                    <td>{genderText}</td>
+                  </tr>
+                  <tr>
+                    <td>募集ステータス:</td>
+                    <td>{statusText}</td>
+                  </tr>
+                  <tr>
+                    <td>募集者:</td>
+                    <td>{UserUid}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <div className="t-login__button">
               {/* ログインしているユーザーのUIDと猫のUIDが一致した場合にボタンを表示する */}
               {isShowButton && (
