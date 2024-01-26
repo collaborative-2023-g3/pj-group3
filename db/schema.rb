@@ -11,13 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_01_26_045714) do
-  create_table "applys", charset: "utf8mb4", comment: "応募テーブル", force: :cascade do |t|
-    t.integer "cat_id", null: false, comment: "猫ID"
-    t.string "uid", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "appries", charset: "utf8mb4", comment: "応募テーブル", force: :cascade do |t|
     t.integer "cat_id", null: false, comment: "猫ID"
     t.string "uid", default: "", null: false
