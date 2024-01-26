@@ -8,6 +8,7 @@ export const Header: React.FC = () => {
   // ログアウトボタンのクリックハンドラ
   const handleLogout = () => {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('uid');
     navigate('/'); // 既に定義された navigate を使用
   };
 
@@ -20,14 +21,14 @@ export const Header: React.FC = () => {
             <li>
               <button onClick={handleLogout}>ログアウト</button>
             </li>
-            <li><Link to="/my">マイページ</Link></li>
+            <li><Link to="/cats/new">マイページ</Link></li>
           </>
-          ) : (
-            <>
-              <li><Link to="/login">ログイン</Link></li>
-              <li><Link to="/register">会員登録</Link></li>
-            </>
-          )}
+        ) : (
+          <>
+            <li><Link to="/login">ログイン</Link></li>
+            <li><Link to="/register">会員登録</Link></li>
+          </>
+        )}
       </ul>
     </div>
   );

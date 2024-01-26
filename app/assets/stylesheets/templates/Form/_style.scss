@@ -1,6 +1,7 @@
 @use '../../utility/colors' as *;
 
-.t-form, .t-login{
+.t-form,
+.t-login {
   margin: 30px auto;
   border: 2px solid $lightBrown;
   padding: 24px;
@@ -14,7 +15,7 @@
       margin-bottom: 5px;
     }
 
-    .--validation-message{
+    .--validation-message {
       color: $orange;
       font-weight: 600;
       font-size: 0.8rem;
@@ -24,6 +25,7 @@
   // 会員登録がdivから外に出てしまっているので、調整する時間もなくここに書く
   input[type="text"],
   input[type="email"],
+  input[type="date"],
   input[type="tel"],
   input[type="password"],
   select {
@@ -43,7 +45,7 @@
     height: 1em; /* ラジオボタンのサイズを指定 */
   }
 
-  &__button{
+  &__button {
     margin-top: 10px;
     text-align: center;
   }

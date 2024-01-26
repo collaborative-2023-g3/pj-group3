@@ -58,6 +58,7 @@ export const AuthRegister: React.FC = () => {
       if (response.ok) {
         // レスポンスヘッダーからアクセストークンを取得
         const access_token = response.headers.get('access-token');
+        const uid = response.headers.get('uid');
         // const responseData = await response.json(); // JSONデータを取得
         // const token = responseData.token; // 'token' プロパティを取得
 
@@ -65,6 +66,7 @@ export const AuthRegister: React.FC = () => {
         if (access_token) {
           // ローカルストレージにアクセストークンを保存
           localStorage.setItem('authToken', access_token);
+          localStorage.setItem('uid', uid || "");
           // フラッシュメッセージを表示
           setFlashMessage("会員登録が完了しました。");
           // トップページへリダイレクト

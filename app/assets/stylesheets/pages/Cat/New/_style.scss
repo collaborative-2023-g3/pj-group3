@@ -1,0 +1,56 @@
+@use '../../../utility/colors' as *;
+
+.p-cats-create {
+  &__form {
+    &--user-type {
+      display: flex;
+      margin-top: 0.4rem;
+
+      input[type="radio"] {
+        margin-right: 0.5rem;
+      }
+      label {
+        margin-right: 1rem;
+      }
+    }
+
+    &--label-with-validation-message {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3px;
+
+      span {
+        color: red;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+    }
+    &--profile-file-label {
+      padding: 10px 40px;
+      border: 1px solid black;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(white, 5%);
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+
+    &--image-preview {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      img {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+      }
+    }
+  }
+}

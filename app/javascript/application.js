@@ -5,6 +5,7 @@ import Top from "./pages/Top";
 import { AuthLogin } from "./pages/AuthLogin";
 import { AuthRegister } from "./pages/AuthRegister";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CatsCreate } from "./pages/Cat/New";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Route path="/" element={<Top />} />
       <Route exact path="/register" element={<AuthRegister />} />
       <Route exact path="/login" element={<AuthLogin />} />
+      <Route exact path="/cats/new" element={<CatsCreate />} />
     </Routes>
   </BrowserRouter>
 );
