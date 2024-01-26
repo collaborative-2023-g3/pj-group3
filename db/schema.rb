@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_26_045714) do
     t.string "uid", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cat_id", "uid"], name: "index_applies_on_cat_id_and_uid", unique: true
+    t.index %w[cat_id uid], name: "index_applies_on_cat_id_and_uid", unique: true
   end
 
   create_table "cats", charset: "utf8mb4", comment: "猫テーブル", force: :cascade do |t|
