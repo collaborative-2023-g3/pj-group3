@@ -14,7 +14,7 @@ root.render(
       <Route path="/" element={<Top />} />
       <Route exact path="/register" element={<AuthRegister />} />
       <Route exact path="/login" element={<AuthLogin />} />
-      <Route exact path="/cats/create" element={<CatsCreate />} />
+      <Route exact path="/cats/new" element={<CatsCreate />} />
     </Routes>
   </BrowserRouter>
 );
