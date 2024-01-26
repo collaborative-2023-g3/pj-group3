@@ -1,0 +1,2 @@
+class Appry < ApplicationRecord
+end
