@@ -16,7 +16,12 @@ module Api
         max_cat_id = Cat.maximum(:cat_id) || 0
         cat[:cat_id] = max_cat_id + 1
         cat[:status] = CAN_APPLY_STATUS
-        cat.save
+
+        if cat.save
+          render json: { status: 200, message: "登録に成功しました" }
+        else
+          render json: { status: 422, message: "登録に失敗しました", errors: cat.errors.full_messages }
+        end
       end
 
       def destroy
