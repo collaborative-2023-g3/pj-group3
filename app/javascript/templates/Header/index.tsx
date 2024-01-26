@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
             <li>
               <button onClick={handleLogout}>ログアウト</button>
             </li>
-            <li><Link to="/cats/new">マイページ</Link></li>
+            <li><Link to="/cats/new">里親の募集をする</Link></li>
           </>
         ) : (
           <>
