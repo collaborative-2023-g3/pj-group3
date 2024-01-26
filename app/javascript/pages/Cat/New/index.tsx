@@ -67,6 +67,7 @@ export const CatsCreate: React.FC = () => {
 
             if (response.ok) {
                 // todo
+                navigate("/");
 
             } else {
                 throw new Error("サーバーエラーが発生しました。再度お試しください。");
