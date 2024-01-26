@@ -9,4 +9,5 @@ export const signOutURL = `/auth/sign_out`
 
 
 // 猫機能
+export const catUrl = `${DEFAULT_API_ENDPOINT}/v1/cat`
 export const catSearchUrl = `${DEFAULT_API_ENDPOINT}/v1/cats/search`

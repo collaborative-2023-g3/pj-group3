@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-
 import { Header } from "../../templates/Header";
-
 import { H2Header } from "../../parts/H2Header";
 import { FormTemplate } from "../../templates/FormTemplate";
 import { Button } from "../../parts/Button";
 import { PageTemplate } from "../../templates/PageTemplate";
 import { ContainerTemplate } from "../../templates/ContainerTemplate";
+import { catUrl } from "../../utility/urls";
 
 type Inputs = {
     name: string,
@@ -58,7 +57,7 @@ export const CatsCreate: React.FC = () => {
             formData.append('uid', uid || "");
 
 
-            const response = await fetch('http://localhost:3000/api/v1/cat', {
+            const response = await fetch(catUrl, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}` // トークンをヘッダーに含める
