@@ -11,9 +11,8 @@ Rails.application.routes.draw do
 
       # devise以外のルーティング
       # prefix :http://localhost:3000/api/v1/**
-      resources :cat, only: %i[index create destroy] #do
+      resources :cat, only: %i[index create destroy]
       resources :apply, only: %i[create]
-      #end
     end
   end
 
