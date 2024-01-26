@@ -5,7 +5,7 @@ import Top from "./pages/Top";
 import { AuthLogin } from "./pages/AuthLogin";
 import { AuthRegister } from "./pages/AuthRegister";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { CatsCreate } from "./pages/CatsCreate";
+import { CatsCreate } from "./pages/Cat/New";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
