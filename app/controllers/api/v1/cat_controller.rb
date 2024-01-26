@@ -20,7 +20,7 @@ module Api
         if cat.save
           render json: { status: 200, message: "登録に成功しました" }
         else
-          render json: { status: 422, message: "登録に失敗しました", errors: cat.errors.full_messages }
+          render json: { status: 422, message: "登録に失敗しました" }
         end
       end
 
